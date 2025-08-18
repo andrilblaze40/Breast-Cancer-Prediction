@@ -18,6 +18,7 @@ def add_sidebar():
     
     slider_labels = [
         ('texture(worst)','texture_worst'),
+        ('texture(se)','texture_se'),
         ('texture(mean)','texture_mean'),
         ('symmetry(worst)','symmetry_worst'), 
         ('symmetry(se)','symmetry_se'),
@@ -55,7 +56,7 @@ def get_radar_chart(input_data):
   
   input_data = get_scaled_values(input_data)
   
-  features = ['texture worst','texture_mean',
+  features = ['texture worst','texture_mean','texture_se,
               'symmetry_worst','symmetry_se','symmetry_mean',
               'smoothness_worst','radius_worst','smoothness_se',
               'smoothness_mean']
@@ -65,7 +66,7 @@ def get_radar_chart(input_data):
 
   fig.add_trace(go.Scatterpolar(
         r=[
-          input_data['texture_worst'], input_data['texture_mean'],
+          input_data['texture_worst'], input_data['texture_se'],input_data['texture_mean'],
           input_data['symmetry_worst'], input_data['symmetry_se'], input_data['symmetry_mean'],
           input_data['smoothness_worst'], input_data['radius_worst'], input_data['smoothness_se'],
           input_data['smoothness_mean']
