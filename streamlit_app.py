@@ -20,7 +20,7 @@ def add_sidebar():
     slider_labels = [
         ('texture(worst)','texture_worst'),
         ('texture(mean)','texture_mean'),
-        ('symmetry(worst)','symmetry_worse'), 
+        ('symmetry(worst)','symmetry_worst'), 
         ('symmetry(se)','symmetry_se'),
         ('symmetry(mean)','symmetry_mean'),
         ('smoothness(worst)','smoothness_worst'),
@@ -56,7 +56,7 @@ def get_radar_chart(input_data):
   
   input_data = get_scaled_values(input_data)
   
-  features = ['texture worse','texture_mean',
+  features = ['texture worst','texture_mean',
               'symmetry_worst','symmetry_se','symmetry_mean',
               'smoothness_worst','radius_worst','smoothness_se',
               'smoothness_mean']
