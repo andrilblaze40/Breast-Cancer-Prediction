@@ -120,25 +120,28 @@ def add_predictions(input_data):
 
 
 def plot_metrics(metrics_list):
+    fig, ax = plt.subplots()
     
     if 'Confusion Matrix' in metrics_list:
         st.subheader("Confusion Matrix")
         ConfusionMatrixDisplay(model, x_test, y_test)
-        st.pyplot()
+        st.pyplot(fig1)
 
 
     if 'ROC Curve' in metrics_list:
+        fig2, ax = plt.subplots()
         st.subheader("ROC Curve") 
         RocCurveDisplay(model, x_test, y_test)
-        st.pyplot()
+        st.pyplot(fig2)
           
           
       
     if 'Precision-Recall Curve' in metrics_list:
+        fig3, ax = plt.subplots()
         st.subheader("Precision-Recall Curve")
         PrecisionRecallDisplay(model, x_test, y_test)
-        st.pyplot()
-        plot_metrics(metrics_list)
+        st.pyplot(fig3)
+        
            
       
         
