@@ -132,7 +132,7 @@ def plot_metrics(metrics_list):
         fig2, ax = plt.subplots()
         st.subheader("ROC Curve") 
         RocCurveDisplay(model, x_test, y_test)
-        st.pyplot(fig2)
+        st.pyplot(fig2)123..
           
           
       
