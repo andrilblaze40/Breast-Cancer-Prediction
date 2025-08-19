@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, classification_report
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
-from sklearn.metrics import ConfusionMatrixDisplay, plot_roc_curve, plot_precision_recall_curve
+from sklearn.metrics import ConfusionMatrixDisplay, RocCurveDisplay, PrecisionRecallDisplay
 from sklearn.metrics import precision_score, recall_score
 def get_clean_data():
     df= pd.read_csv("cleaned_breast_cancer_data.csv")
@@ -129,14 +129,14 @@ def plot_metrics(metrics_list):
 
     if 'ROC Curve' in metrics_list:
         st.subheader("ROC Curve") 
-        plot_roc_curve(model, x_test, y_test)
+        RocCurveDisplay(model, x_test, y_test)
         st.pyplot()
           
           
       
     if 'Precision-Recall Curve' in metrics_list:
         st.subheader("Precision-Recall Curve")
-        plot_precision_recall_curve(model, x_test, y_test)
+        PrecisionRecallDisplay(model, x_test, y_test)
         st.pyplot()
            
       
