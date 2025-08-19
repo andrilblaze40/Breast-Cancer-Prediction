@@ -119,21 +119,32 @@ def add_predictions(input_data):
     st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
 
 
-  def plot_metrics(metrics_list):
-        if 'Confusion Matrix' in metrics_list:
-            st.subheader("Confusion Matrix") 
-            plot_confusion_matrix(model, x_test, y_test)
-            st.pyplot()
-        
-        if 'ROC Curve' in metrics_list:
-            st.subheader("ROC Curve") 
-            plot_roc_curve(model, x_test, y_test)
-            st.pyplot()
+def plot_metrics(metrics_list):
+    
+    if 'Confusion Matrix' in metrics_list:
+        st.subheader("Confusion Matrix")
+        plot_confusion_matrix(model, x_test, y_test)
+        st.pyplot()
 
-        if 'Precision-Recall Curve' in metrics_list:
-            st.subheader("Precision-Recall Curve")
-            plot_precision_recall_curve(model, x_test, y_test)
-            st.pyplot()
+
+    if 'ROC Curve' in metrics_list:
+        st.subheader("ROC Curve") 
+        plot_roc_curve(model, x_test, y_test)
+        st.pyplot()
+          
+          
+      
+    if 'Precision-Recall Curve' in metrics_list:
+        st.subheader("Precision-Recall Curve")
+        plot_precision_recall_curve(model, x_test, y_test)
+        st.pyplot()
+           
+      
+        
+        
+       
+
+        
 
 
 def main():
