@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, classification_report
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
-from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precision_recall_curve
+from sklearn.metrics import ConfusionMatrixDisplay, plot_roc_curve, plot_precision_recall_curve
 from sklearn.metrics import precision_score, recall_score
 def get_clean_data():
     df= pd.read_csv("cleaned_breast_cancer_data.csv")
@@ -123,7 +123,7 @@ def plot_metrics(metrics_list):
     
     if 'Confusion Matrix' in metrics_list:
         st.subheader("Confusion Matrix")
-        plot_confusion_matrix(model, x_test, y_test)
+        ConfusionMatrixDisplay(model, x_test, y_test)
         st.pyplot()
 
 
