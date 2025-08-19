@@ -138,6 +138,7 @@ def plot_metrics(metrics_list):
         st.subheader("Precision-Recall Curve")
         PrecisionRecallDisplay(model, x_test, y_test)
         st.pyplot()
+        plot_metrics(metrics_list)
            
       
         
